@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>.:. Tarea</title>
+</head>
+<body>
+    <em>
+        <h4>Tarea de Programacion<hr></h4>
+    </em>
+    <input type="text" placeholder="Ingrese su nombre" id="txtNombre" style="width: 400px;">
+    <input type="button" value="Habilitar Accion" onclick="executeAction();">
+    <span   id="muestraTexto"
+            style="position:absolute; 
+                   cursor: default;
+                   display:none;">
+    </span>
+</body>
+<script>
+    function executeAction(){
+        document.onmousemove=posit;
+    }
+
+    function posit(event){
+        var nombre = document.getElementById("txtNombre").value;
+        if(nombre == "")
+            nombre = "Texto de prueba.. Programacion hypermedial";
+        
+        document.getElementById("muestraTexto").innerHTML = nombre;
+        document.getElementById("muestraTexto").style.display='block';
+        o = document.getElementsByTagName("span")[0];
+        o.style.left=event.clientX-50+"px";
+        o.style.top=event.clientY+10+"px";
+    }
+</script>
+</html>
